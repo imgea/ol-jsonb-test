@@ -1,0 +1,26 @@
+plugins {
+	id 'war'
+	id 'eclipse'
+}
+
+war {
+	archiveFileName = 'ROOT.war'
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+
+	implementation 'org.eclipse.microprofile:microprofile:6.0'
+	implementation 'org.slf4j:slf4j-api:1.7.30'
+	implementation 'ch.qos.logback:logback-classic:1.4.11'
+	
+    implementation 'org.mongodb:bson:4.8.0'
+    implementation 'com.google.guava:guava:31.0.1-jre'
+    //remove yasson dependency to mitigate json concurrency issues 
+    implementation group: 'org.eclipse', name: 'yasson', version: '3.0.3'
+   
+}

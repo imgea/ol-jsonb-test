@@ -1,0 +1,14 @@
+<server description="JsonB Concurrency Test">
+    <featureManager>
+        <feature>microProfile-6.0</feature>
+		<feature>servlet-6.0</feature>
+    </featureManager>
+
+    <httpEndpoint httpPort="8080" httpsPort="8443" id="defaultHttpEndpoint"  host="*" />
+
+	<logging consoleLogLevel="AUDIT" consoleFormat="DEV" />
+	<ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+	<mpMetrics authentication="false" />
+
+    <webApplication location="jsonb-concurrency.war" contextRoot="/" />
+</server>
